@@ -23,5 +23,5 @@ InetAddress[] results = java.net.InetAddress.getAllByName(hostname);
   * Add notes on pps limits and mtu which can affect DNS
   * Add link to AWS hybrid cloud paper
   * Add example Unbound config
-  
+  * Stackoverflow article regarding Java DNS cache inspection https://stackoverflow.com/questions/1835421/java-dns-cache-viewer
   
