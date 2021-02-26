@@ -1,13 +1,13 @@
 ### Java DNS Troubleshooting Notes
 #### TL;DR
-* Java applications are more likely to have DNS lookup errors than other applications if there is an over burredend DNS server.
-* Java has short positive and negative TTL of its DNS cache.
+* Java applications are more likely to have DNS lookup errors than other applications if there is an over burdended DNS server.
+* Java has short positive and negative TTL for entries in its DNS cache.
 * Frequent lookups results in more burden on the DNS server.
 * Frequent lookups increase the sample rate of detecting DNS errors, and thus report more errors.
 * The Java DNS cache does not use the system DNS cache.
-* The system as a whole and other applications that use the system DNS cache may not report any errors because of longer DNS cache TTL.
+* The system as a whole and other applications that use the system DNS cache may not report any errors because system DNS caches, cache for a longer period of time - or at least respect the TTL of the record.
 * A network with many JVMs puts more load on a DNS server.
-* A DNS proxy such as Unbound can be configured to return the last good looked, if a lookup fails.
+* A DNS proxy such as Unbound or NSCD can be configured to return the last good lookup for a record, if a lookup fails.
 
 #### Notes on troubleshooting Java hybrid cloud DNS issues
 
