@@ -32,6 +32,9 @@ InetAddress[] results = java.net.InetAddress.getAllByName(hostname);
   * Add notes on local DNS cache like Unbound which can serve records with expired ttl - and where DDNS takes place.
   * Add notes on pps limits and mtu which can affect DNS
   * Add link to AWS hybrid cloud paper
-  * Add example Unbound config
+  * Add example Unbound config https://d1.awsstatic.com/whitepapers/hybrid-cloud-dns-options-for-vpc.pdf?did=wp_card&trk=wp_card
+```
+serve-expired option to serve old responses from the cache with a TTL of zero
+```
   * Stackoverflow article regarding Java DNS cache inspection https://stackoverflow.com/questions/1835421/java-dns-cache-viewer
   
