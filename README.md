@@ -38,5 +38,5 @@ server:
 ```
 
 * Stackoverflow article regarding Java DNS cache inspection https://stackoverflow.com/questions/1835421/java-dns-cache-viewer
-* AWS paper regarding DNS configuration (AWS paper link)[https://docs.aws.amazon.com/whitepapers/latest/hybrid-cloud-dns-options-for-vpc/additional-considerations.html]
-* (Packet Per Second DNS limits for Route53)[https://repost.aws/knowledge-center/vpc-find-cause-of-failed-dns-queries] 
+* AWS paper regarding DNS configuration [AWS paper link](https://docs.aws.amazon.com/whitepapers/latest/hybrid-cloud-dns-options-for-vpc/additional-considerations.html)
+* [Packet Per Second DNS limits for Route53](https://repost.aws/knowledge-center/vpc-find-cause-of-failed-dns-queries) 
