@@ -5,7 +5,7 @@
 * Frequent lookups results in more burden on the DNS server.
 * Frequent lookups increase the sample rate of detecting DNS errors, and thus report more errors, and thus more Exceptions.
 * The Java DNS cache does not use the system DNS cache.
-* The system as a whole and may not report any errors because it respects the TTL of the record.
+* The system as a whole may not report any errors because it respects the TTL of the record.
 * A network with many JVMs (i.e. Java applications) puts more load on DNS servers.
 * A DNS proxy such as Unbound or NSCD can be configured to return the last good lookup for a record, if a lookup fails.
 * This issue has been observed in hybrid networks with Infoblox running in the cloud. Scaling up or out Infoblox reduces the issue.
@@ -28,12 +28,6 @@ InetAddress[] results = java.net.InetAddress.getAllByName(hostname);
     	* `networkaddress.cache.ttl`
     	* `networkaddress.cache.negative.ttl`
     
-  **TODO**
-  * Add notes on Windows resolver, Java resolver, Linux resolver.
-  * Add notes on local DNS cache like Unbound which can serve records with expired ttl - and where DDNS takes place.
-  * Add notes on pps limits and mtu which can affect DNS
-  * Add link to AWS hybrid cloud paper
-  * Add example Unbound config https://d1.awsstatic.com/whitepapers/hybrid-cloud-dns-options-for-vpc.pdf?did=wp_card&trk=wp_card
 ```
 server:
   serve-expired: yes
@@ -42,5 +36,7 @@ server:
   # 1.8 seconds, in milliseconds
   serve-expired-client-timeout: 1800  
 ```
-  * Stackoverflow article regarding Java DNS cache inspection https://stackoverflow.com/questions/1835421/java-dns-cache-viewer
-  
+
+* Stackoverflow article regarding Java DNS cache inspection https://stackoverflow.com/questions/1835421/java-dns-cache-viewer
+* AWS paper regarding DNS configuration (AWS paper link)[https://docs.aws.amazon.com/whitepapers/latest/hybrid-cloud-dns-options-for-vpc/additional-considerations.html]
+* (Packet Per Second DNS limits for Route53)[https://repost.aws/knowledge-center/vpc-find-cause-of-failed-dns-queries] 
