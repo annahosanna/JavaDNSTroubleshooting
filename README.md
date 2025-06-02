@@ -2,10 +2,10 @@
 #### TL;DR
 * Java applications are more likely to have DNS lookup errors than other applications if there is an over burdended DNS server.
 * Java has short positive and negative TTL for entries in its DNS cache (10 seconds), and it does not respect the DNS record's TTL.
-* Frequent lookups results in more burden on the DNS server.
-* Frequent lookups increase the sample rate of detecting DNS errors, and thus report more errors, and thus more Exceptions.
+* Frequent lookups results in more burden on the DNS server. (thus more DNS servers maybe needed to distribute the load)
+* Frequent lookups increase the sample rate of detecting DNS errors (DNS server failure to respond or respond in a timely manner), and thus report more errors, and thus more Exceptions.
 * The Java DNS cache does not use the system DNS cache.
-* The system as a whole may not report any errors because it respects the TTL of the record.
+* The system as a whole may not report any errors because it respects the TTL of the record and thus different cache expiration duration.
 * A network with many JVMs (i.e. Java applications) puts more load on DNS servers.
 * A DNS proxy such as Unbound or NSCD can be configured to return the last good lookup for a record, if a lookup fails.
 * This issue has been observed in hybrid networks with Infoblox running in the cloud. Scaling up or out Infoblox reduces the issue.
